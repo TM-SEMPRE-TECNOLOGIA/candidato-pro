@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout Seguro | Candidato PRO — Eleições 2026</title>
+  <meta name="description" content="Finalize seu pedido com segurança. Materiais gráficos, infraestrutura digital e alta performance eleitoral para sua campanha 2026." />
+  <link rel="shortcut icon" href="imagens/favicon.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #003d96;
+      --primary-dark: #002766;
+      --primary-light: #e6f0fa;
+      --accent: #ffbe00;
+      --accent-hover: #e5ab00;
+      --green: #10b981;
+      --green-dark: #059669;
+      --red: #ef4444;
+      --bg: #0b1320;
+      --card-bg: #111c2e;
+      --card-border: #1e2e47;
+      --text: #ffffff;
+      --text-muted: #94a3b8;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      overflow-x: hidden;
+      padding-bottom: 60px;
+    }
+
+    /* TOP URGENCY STRIP */
+    .top-strip {
+      background: linear-gradient(90deg, #b91c1c, #dc2626, #b91c1c);
+      color: #fff;
+      padding: 8px 16px;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .timer-badge {
+      background: rgba(0,0,0,0.35);
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      color: #ffbe00;
+    }
+
+    /* HEADER HERO */
+    .checkout-header {
+      padding: 24px 20px 10px;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .brand-logo {
+      max-width: 180px;
+      margin: 0 auto 16px;
+      display: block;
+    }
+    .checkout-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+      font-weight: 900;
+      line-height: 1.2;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .checkout-title span {
+      color: var(--accent);
+    }
+    .checkout-subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* MAIN CONTAINER GRID */
+    .checkout-container {
+      max-width: 1140px;
+      margin: 20px auto 40px;
+      padding: 0 16px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .checkout-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* CARDS & PANELS */
+    .panel {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+    }
+    .panel-step {
+      background: var(--primary);
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.85rem;
+    }
+    .panel-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    /* INPUTS */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 600px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+    .form-group label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #cbd5e1;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .form-input {
+      background: #09101d;
+      border: 1px solid #233550;
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: #fff;
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-input:focus {
+      border-color: var(--accent);
+    }
+
+    /* PLAN SELECTION CARDS */
+    .plan-selector {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .plan-card {
+      border: 2px solid #1e2e47;
+      background: #09101d;
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .plan-card:hover {
+      border-color: #334d75;
+      background: #0d1728;
+    }
+    .plan-card.active {
+      border-color: var(--accent);
+      background: rgba(255, 190, 0, 0.05);
+    }
+    .plan-card-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .plan-radio {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #475569;
+      border-radius: 50%;
+      outline: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .plan-card.active .plan-radio {
+      border-color: var(--accent);
+      background: var(--accent);
+      box-shadow: inset 0 0 0 3px #09101d;
+    }
+    .plan-info-title {
+      font-weight: 800;
+      font-size: 1rem;
+      color: #fff;
+    }
+    .plan-info-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .plan-card-right {
+      text-align: right;
+    }
+    .plan-price-main {
+      font-family: var(--font-heading);
+      font-weight: 900;
+      font-size: 1.15rem;
+      color: var(--accent);
+    }
+    .plan-price-sub {
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+    .badge-popular {
+      position: absolute;
+      top: -10px;
+      right: 14px;
+      background: var(--accent);
+      color: #0b1320;
+      font-size: 0.65rem;
+      font-weight: 900;
+      padding: 2px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ORDER BUMPS (COMPRE JUNTO) */
+    .order-bump-box {
+      border: 2px dashed #f59e0b;
+      background: rgba(245, 158, 11, 0.04);
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 14px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .order-bump-box:hover {
+      background: rgba(245, 158, 11, 0.08);
+    }
+    .order-bump-checkbox {
+      width: 22px;
+      height: 22px;
+      accent-color: #f59e0b;
+      cursor: pointer;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .order-bump-content {
+      flex: 1;
+    }
+    .order-bump-headline {
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: #fef08a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .order-bump-badge {
+      background: #f59e0b;
+      color: #000;
+      font-size: 0.65rem;
+      font-weight: 900;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .order-bump-text {
+      font-size: 0.82rem;
+      color: #cbd5e1;
+      line-height: 1.4;
+    }
+
+    /* PAYMENT TABS */
+    .payment-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .pay-tab-btn {
+      background: #09101d;
+      border: 2px solid #233550;
+      border-radius: 8px;
+      padding: 12px;
+      color: #cbd5e1;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .pay-tab-btn.active {
+      border-color: var(--accent);
+      color: #fff;
+      background: rgba(255, 190, 0, 0.08);
+    }
+    .pay-tab-content {
+      display: none;
+      background: #09101d;
+      border-radius: 8px;
+      padding: 16px;
+      border: 1px solid #1e2e47;
+    }
+    .pay-tab-content.active {
+      display: block;
+    }
+
+    /* ORDER SUMMARY & CTA */
+    .summary-box {
+      background: #09101d;
+      border-radius: 10px;
+      padding: 18px;
+      margin-top: 18px;
+      border: 1px solid #1e2e47;
+    }
+    .summary-line {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      color: #94a3b8;
+      margin-bottom: 8px;
+    }
+    .summary-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-top: 1px solid #1e2e47;
+      padding-top: 12px;
+      margin-top: 10px;
+    }
+    .summary-total-label {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #fff;
+    }
+    .summary-total-val {
+      font-family: var(--font-heading);
+      font-weight: 900;
+      font-size: 1.7rem;
+      color: var(--accent);
+    }
+    .summary-installments {
+      text-align: right;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-top: -4px;
+      margin-bottom: 12px;
+    }
+
+    /* CTA BUTTON */
+    .btn-buy-now {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 18px 24px;
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 900;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.35);
+      transition: all 0.25s ease;
+      animation: pulse-green 2.5s infinite;
+      letter-spacing: 0.5px;
+    }
+    .btn-buy-now:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(16, 185, 129, 0.5);
+    }
+    @keyframes pulse-green {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    /* HIGH TICKET CALL BOX */
+    .call-consult-box {
+      margin-top: 16px;
+      background: #0d1728;
+      border: 1px solid #1e3a66;
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .call-consult-box p {
+      font-size: 0.82rem;
+      color: #94a3b8;
+    }
+    .call-consult-box strong {
+      color: #fff;
+    }
+    .btn-call-consult {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: 1px solid #25d366;
+      color: #25d366;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .btn-call-consult:hover {
+      background: #25d366;
+      color: #000;
+    }
+
+    /* RIGHT COLUMN PRODUCT PREVIEW */
+    .product-preview-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 24px;
+      position: sticky;
+      top: 70px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    .preview-badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0, 61, 150, 0.4);
+      border: 1px solid #003d96;
+      color: #93c5fd;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .preview-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+    .preview-banner-img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 18px;
+      border: 1px solid #1e2e47;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+    .deliverables-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .deliverables-list li {
+      font-size: 0.88rem;
+      color: #e2e8f0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .deliverables-list li i {
+      color: #10b981;
+      font-size: 1rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* BONUS SECTION */
+    .bonus-box {
+      background: #09101d;
+      border-radius: 10px;
+      padding: 16px;
+      border: 1px solid #1e2e47;
+      margin-bottom: 20px;
+    }
+    .bonus-header {
+      font-size: 0.82rem;
+      font-weight: 900;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .bonus-item {
+      font-size: 0.82rem;
+      color: #cbd5e1;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .bonus-item:last-child {
+      border-bottom: none;
+    }
+
+    /* TRUST SEALS */
+    .trust-seals {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding-top: 14px;
+      border-top: 1px solid var(--card-border);
+    }
+    .trust-seal-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+    .trust-seal-item i {
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    /* FLOATING WHATSAPP BUTTON */
+    .floating-wa {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: #000;
+      font-weight: 800;
+      font-size: 0.88rem;
+      padding: 12px 18px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+      z-index: 999;
+      transition: transform 0.2s;
+    }
+    .floating-wa:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. TOP URGENCY COUNTDOWN -->
+  <div class="top-strip">
+    <span>⚡ CONDIÇÃO OFICIAL ELEIÇÕES 2026 LIBERADA:</span>
+    <div class="timer-badge" id="countdownTimer">14:59</div>
+    <span class="w-hidden-small">Vagas limitadas por circunscrição eleitoral</span>
+  </div>
+
+  <!-- 2. HEADER -->
+  <header class="checkout-header">
+    <a href="index.html">
+      <img src="imagens/candidato-pro-logo.png" alt="Candidato PRO" class="brand-logo" />
+    </a>
+    <h1 class="checkout-title">SIM! Quero uma <span>Campanha Eleitoral Vencedora</span> em 2026!</h1>
+    <p class="checkout-subtitle">Preencha seus dados abaixo e escolha seu pacote para iniciar a criação imediatamente com nossa equipe de especialistas.</p>
+  </header>
+
+  <!-- 3. MAIN CHECKOUT GRID -->
+  <main class="checkout-container">
+
+    <!-- LEFT COLUMN: FORM & PAYMENT -->
+    <div class="checkout-left">
+
+      <!-- PASSO 1: DADOS DO CANDIDATO -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-step">1</div>
+          <h2 class="panel-title">Dados da Sua Candidatura</h2>
+        </div>
+        <div class="form-grid">
+          <div class="form-group full">
+            <label>Nome do Candidato / Assessor</label>
+            <input type="text" id="custName" class="form-input" placeholder="Ex: Dr. Marcelo Silva ou Ana Beatriz (Coordenação)" required />
+          </div>
+          <div class="form-group">
+            <label>WhatsApp / Celular com DDD</label>
+            <input type="tel" id="custPhone" class="form-input" placeholder="(00) 00000-0000" required />
+          </div>
+          <div class="form-group">
+            <label>E-mail Oficial da Campanha</label>
+            <input type="email" id="custEmail" class="form-input" placeholder="contato@campanha.com.br" required />
+          </div>
+          <div class="form-group">
+            <label>Cargo Pretendido</label>
+            <select id="custPosition" class="form-input">
+              <option value="Deputado Federal">Deputado Federal</option>
+              <option value="Deputado Estadual">Deputado Estadual</option>
+              <option value="Senador">Senador da República</option>
+              <option value="Prefeito">Prefeito Municipal</option>
+              <option value="Vereador">Vereador</option>
+              <option value="Governador">Governador</option>
+              <option value="Outro">Assessoria / Partido Político</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Estado / Cidade</label>
+            <input type="text" id="custCity" class="form-input" placeholder="Ex: Goiânia - GO" required />
+          </div>
+        </div>
+      </div>
+
+      <!-- PASSO 2: SELEÇÃO DO PACOTE -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-step">2</div>
+          <h2 class="panel-title">Selecione o Pacote Desejado</h2>
+        </div>
+
+        <div class="plan-selector">
+          <!-- PLANO 1 -->
+          <div class="plan-card" onclick="selectPlan('basico', 199.90, 'Kit Básico de Artes')">
+            <div class="plan-card-left">
+              <input type="radio" name="plan" class="plan-radio" id="plan_basico" />
+              <div>
+                <div class="plan-info-title">Kit Básico de Artes</div>
+                <div class="plan-info-desc">Logo + Tratamento Foto + Santinho + Panfleto</div>
+              </div>
+            </div>
+            <div class="plan-card-right">
+              <div class="plan-price-main">R$ 199,90</div>
+              <div class="plan-price-sub">ou 12x de R$ 19,90</div>
+            </div>
+          </div>
+
+          <!-- PLANO 2 (DEFAULT) -->
+          <div class="plan-card active" onclick="selectPlan('intermediario', 299.90, 'Kit Intermediário de Artes')">
+            <span class="badge-popular">Mais Procurado</span>
+            <div class="plan-card-left">
+              <input type="radio" name="plan" class="plan-radio" id="plan_intermediario" checked />
+              <div>
+                <div class="plan-info-title">Kit Intermediário de Artes</div>
+                <div class="plan-info-desc">Tudo do Básico + Botton, Para-choque, Bandeira, Praguinha, Cartaz</div>
+              </div>
+            </div>
+            <div class="plan-card-right">
+              <div class="plan-price-main">R$ 299,90</div>
+              <div class="plan-price-sub">ou 12x de R$ 29,90</div>
+            </div>
+          </div>
+
+          <!-- PLANO 3 -->
+          <div class="plan-card" onclick="selectPlan('avancado', 499.90, 'Kit Avançado de Campanha')">
+            <div class="plan-card-left">
+              <input type="radio" name="plan" class="plan-radio" id="plan_avancado" />
+              <div>
+                <div class="plan-info-title">Kit Avançado de Campanha</div>
+                <div class="plan-info-desc">Wind Banner, Pragão, 3 Cards Feed, 3 Stories + Cartão Digital</div>
+              </div>
+            </div>
+            <div class="plan-card-right">
+              <div class="plan-price-main">R$ 499,90</div>
+              <div class="plan-price-sub">ou 12x de R$ 49,90</div>
+            </div>
+          </div>
+
+          <!-- PLANO 4 -->
+          <div class="plan-card" onclick="selectPlan('completo', 999.90, 'Kit Completo Eleições 2026')">
+            <div class="plan-card-left">
+              <input type="radio" name="plan" class="plan-radio" id="plan_completo" />
+              <div>
+                <div class="plan-info-title">Kit Completo — Eleições 2026</div>
+                <div class="plan-info-desc">Adesivo Perfurado Carro + Envelopamento Veículo + Arquivos Abertos .AI</div>
+              </div>
+            </div>
+            <div class="plan-card-right">
+              <div class="plan-price-main">R$ 999,90</div>
+              <div class="plan-price-sub">ou 12x de R$ 99,90</div>
+            </div>
+          </div>
+
+          <!-- PACOTES HIGH TICKET -->
+          <div class="plan-card" onclick="selectPlan('entrada', 10000.00, 'Entrada Digital (Landing Page + Tráfego)')">
+            <div class="plan-card-left">
+              <input type="radio" name="plan" class="plan-radio" id="plan_entrada" />
+              <div>
+                <div class="plan-info-title">Entrada Digital (Landing Page + Tráfego)</div>
+                <div class="plan-info-desc">Site Oficial + 15 Dias de Tráfego Meta Ads + Criativos + Pixel</div>
+              </div>
+            </div>
+            <div class="plan-card-right">
+              <div class="plan-price-main">R$ 10.000,00</div>
+              <div class="plan-price-sub">ou 12x de R$ 998,00</div>
+            </div>
+          </div>
+
+          <div class="plan-card" onclick="selectPlan('ecossistema', 14000.00, 'Ecossistema Máster de Campanha')">
+            <div class="plan-card-left">
+              <input type="radio" name="plan" class="plan-radio" id="plan_ecossistema" />
+              <div>
+                <div class="plan-info-title">Ecossistema Máster de Campanha</div>
+                <div class="plan-info-desc">Site + Tráfego + Automação de WhatsApp + Disparo Dia D + Suporte VIP</div>
+              </div>
+            </div>
+            <div class="plan-card-right">
+              <div class="plan-price-main">R$ 14.000,00</div>
+              <div class="plan-price-sub">ou 12x de R$ 1.398,00</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ORDER BUMPS (COMPRE JUNTO) -->
+        <div style="margin-top: 24px;">
+          <h3 style="font-size: 0.9rem; font-weight: 800; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px;">
+            <i class="fa-solid fa-cart-plus" style="color:var(--accent);"></i> Aproveite e adicione ao seu pedido com 1 clique:
+          </h3>
+
+          <!-- BUMP 1 -->
+          <label class="order-bump-box">
+            <input type="checkbox" class="order-bump-checkbox" id="bump_santinhos" onchange="toggleBump('santinhos', 97.00, '+3 Variações de Santinhos Digitais')" />
+            <div class="order-bump-content">
+              <div class="order-bump-headline">
+                <span class="order-bump-badge">Oferta Especial</span>
+                <span>Adicionar +3 Variações de Santinhos Digitais (+ R$ 97,00)</span>
+              </div>
+              <p class="order-bump-text">Versões específicas com fotos e frases diferentes para disparos segmentados por WhatsApp e grupos de apoio.</p>
+            </div>
+          </label>
+
+          <!-- BUMP 2 -->
+          <label class="order-bump-box">
+            <input type="checkbox" class="order-bump-checkbox" id="bump_adesivo" onchange="toggleBump('adesivo', 147.00, 'Arte de Adesivo Perfurado de Carro')" />
+            <div class="order-bump-content">
+              <div class="order-bump-headline">
+                <span class="order-bump-badge">Mais Pedido</span>
+                <span>Arte de Adesivo Perfurado para Carro (+ R$ 147,00)</span>
+              </div>
+              <p class="order-bump-text">Gabarito nas medidas oficiais para vidro traseiro de veículos da militância e eleitores.</p>
+            </div>
+          </label>
+
+          <!-- BUMP 3 -->
+          <label class="order-bump-box">
+            <input type="checkbox" class="order-bump-checkbox" id="bump_stickers" onchange="toggleBump('stickers', 197.00, 'Pack 10 Figurinhas / Stickers de WhatsApp')" />
+            <div class="order-bump-content">
+              <div class="order-bump-headline">
+                <span class="order-bump-badge">Viralização</span>
+                <span>Pack 10 Figurinhas / Stickers de WhatsApp (+ R$ 197,00)</span>
+              </div>
+              <p class="order-bump-text">10 stickers recortados com borda branca, slogan e reações do candidato para viralizar nos grupos.</p>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- PASSO 3: FORMA DE PAGAMENTO & FINALIZAÇÃO -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-step">3</div>
+          <h2 class="panel-title">Forma de Pagamento</h2>
+        </div>
+
+        <div class="payment-tabs">
+          <button type="button" class="pay-tab-btn active" id="tabBtnCartao" onclick="switchPayTab('cartao')">
+            <i class="fa-regular fa-credit-card"></i> Cartão (Até 12x)
+          </button>
+          <button type="button" class="pay-tab-btn" id="tabBtnPix" onclick="switchPayTab('pix')">
+            <i class="fa-brands fa-pix" style="color:#00bdae;"></i> PIX Instantâneo
+          </button>
+        </div>
+
+        <!-- ABA CARTAO -->
+        <div class="pay-tab-content active" id="tabContentCartao">
+          <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 12px;">
+            <i class="fa-solid fa-shield-halved" style="color:#10b981;"></i> Processamento seguro via gateway protegido com aprovação imediata em até 12 parcelas.
+          </p>
+          <img src="imagens/boleto_.png" alt="Bandeiras de Cartão" style="max-height: 28px; margin-bottom: 8px; filter: brightness(0.9);" />
+        </div>
+
+        <!-- ABA PIX -->
+        <div class="pay-tab-content" id="tabContentPix">
+          <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.4;">
+            <i class="fa-solid fa-bolt" style="color:var(--accent);"></i> <strong>Aprovação em segundos:</strong> O código PIX Copia-e-Cola e QR Code serão gerados para pagamento imediato sem necessidade de cartão.
+          </p>
+        </div>
+
+        <!-- RESUMO DO PEDIDO -->
+        <div class="summary-box">
+          <div class="summary-line">
+            <span id="sumPlanName">Kit Intermediário de Artes</span>
+            <span id="sumPlanPrice">R$ 299,90</span>
+          </div>
+          <div id="sumBumpsContainer"></div>
+          <div class="summary-total">
+            <span class="summary-total-label">Total a Pagar:</span>
+            <span class="summary-total-val" id="sumTotalPrice">R$ 299,90</span>
+          </div>
+          <div class="summary-installments" id="sumInstallments">ou até 12x de R$ 29,90</div>
+        </div>
+
+        <!-- BOTAO PRINCIPAL DE COMPRA -->
+        <div style="margin-top: 18px;">
+          <button type="button" class="btn-buy-now" onclick="executeCheckout()">
+            <i class="fa-solid fa-lock" style="margin-right: 8px; font-size: 1rem;"></i> FINALIZAR MEU PEDIDO AGORA
+          </button>
+        </div>
+
+        <!-- SE FOR PACOTE GRANDE: OPCIONAL CALL CONSULTIVA -->
+        <div class="call-consult-box">
+          <div>
+            <p><strong>Prefere atendimento consultivo?</strong></p>
+            <p>Tire dúvidas sobre escopo e prazos com nosso estrategista.</p>
+          </div>
+          <a href="https://api.whatsapp.com/send?phone=5562996046458&text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20Call%20Consultiva%20para%20minha%20campanha%202026." target="_blank" class="btn-call-consult">
+            <i class="fa-brands fa-whatsapp"></i> Call Consultiva
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN: PRODUCT PROOF & AUTHORITY -->
+    <div class="checkout-right">
+      <div class="product-preview-card">
+        <div class="preview-badge-top">
+          <i class="fa-solid fa-award"></i> Padrão Profissional Eleições 2026
+        </div>
+        <h3 class="preview-title" id="previewTitle">Candidato PRO — Kit Completo de Identidade & Campanha</h3>
+        <img src="imagens/hero-war-room.jpg" alt="Campanha Candidato PRO" class="preview-banner-img" />
+
+        <h4 style="font-size: 0.85rem; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;">
+          O que está incluso no seu pedido:
+        </h4>
+
+        <ul class="deliverables-list" id="previewList">
+          <li><i class="fa-solid fa-circle-check"></i> <span><strong>Identidade Visual Completa</strong> com as cores oficiais do partido</span></li>
+          <li><i class="fa-solid fa-circle-check"></i> <span><strong>Tratamento de Foto de Estúdio</strong> (recorte de alta precisão)</span></li>
+          <li><i class="fa-solid fa-circle-check"></i> <span><strong>Santinho Digital & Impresso</strong> nos formatos para gráfica</span></li>
+          <li><i class="fa-solid fa-circle-check"></i> <span><strong>Artes para Redes Sociais</strong> (Feed, Stories e Capas)</span></li>
+          <li><i class="fa-solid fa-circle-check"></i> <span><strong>Entrega Rápida</strong> para você não perder tempo de campanha</span></li>
+        </ul>
+
+        <!-- BONUS -->
+        <div class="bonus-box">
+          <div class="bonus-header">
+            <i class="fa-solid fa-gift"></i> + Bônus Especiais Inclusos:
+          </div>
+          <div class="bonus-item">
+            <i class="fa-solid fa-check" style="color:#10b981;"></i> Guia de Disparos de WhatsApp Anti-Banimento
+          </div>
+          <div class="bonus-item">
+            <i class="fa-solid fa-check" style="color:#10b981;"></i> Checklist de Regras de Propaganda Eleitoral TSE 2026
+          </div>
+          <div class="bonus-item">
+            <i class="fa-solid fa-check" style="color:#10b981;"></i> Suporte Prioritário para Ajustes e Alterações
+          </div>
+        </div>
+
+        <!-- TRUST SEALS -->
+        <div class="trust-seals">
+          <div class="trust-seal-item">
+            <i class="fa-solid fa-shield-check"></i>
+            <span><strong>Compra 100% Segura</strong><br/>Criptografia SSL 256-bit</span>
+          </div>
+          <div class="trust-seal-item">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <span><strong>Emissão de NFS</strong><br/>Prestação de Contas TSE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://api.whatsapp.com/send?phone=5562996046458&text=Ol%C3%A1!%20Estou%20na%20p%C3%A1gina%20de%20checkout%20do%20Candidato%20PRO%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" class="floating-wa">
+    <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Dúvidas? Fale no WhatsApp
+  </a>
+
+  <!-- LOGIC & SCRIPTS -->
+  <script>
+    // 1. GATEWAY PAYMENT LINKS REPOSITORY (Preencha aqui com os links gerados)
+    const PAYMENT_LINKS = {
+      basico: '',        // Ex: 'https://mpago.la/xxxx' ou link Asaas
+      intermediario: '', // Ex: 'https://mpago.la/xxxx'
+      avancado: '',      // Ex: 'https://mpago.la/xxxx'
+      completo: '',      // Ex: 'https://mpago.la/xxxx'
+      entrada: '',       // Ex: 'https://mpago.la/xxxx'
+      ecossistema: ''    // Ex: 'https://mpago.la/xxxx'
+    };
+
+    // Current State
+    let currentPlan = {
+      key: 'intermediario',
+      price: 299.90,
+      name: 'Kit Intermediário de Artes'
+    };
+
+    let activeBumps = {};
+    let activePaymentMethod = 'cartao';
+
+    // Timer logic
+    let timeLeft = 14 * 60 + 59;
+    setInterval(() => {
+      if (timeLeft <= 0) return;
+      timeLeft--;
+      const m = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+      const s = (timeLeft % 60).toString().padStart(2, '0');
+      document.getElementById('countdownTimer').textContent = `${m}:${s}`;
+    }, 1000);
+
+    // Format currency
+    function fmt(v) {
+      return v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    // Select plan
+    function selectPlan(key, price, name) {
+      currentPlan = { key, price, name };
+      document.querySelectorAll('.plan-card').forEach(card => card.classList.remove('active'));
+      document.querySelectorAll('.plan-radio').forEach(r => r.checked = false);
+
+      const targetRadio = document.getElementById(`plan_${key}`);
+      if (targetRadio) {
+        targetRadio.checked = true;
+        targetRadio.closest('.plan-card').classList.add('active');
+      }
+      updateSummary();
+    }
+
+    // Toggle bump
+    function toggleBump(key, price, name) {
+      const chk = document.getElementById(`bump_${key}`);
+      if (chk.checked) {
+        activeBumps[key] = { price, name };
+      } else {
+        delete activeBumps[key];
+      }
+      updateSummary();
+    }
+
+    // Switch payment method
+    function switchPayTab(method) {
+      activePaymentMethod = method;
+      document.getElementById('tabBtnCartao').classList.toggle('active', method === 'cartao');
+      document.getElementById('tabBtnPix').classList.toggle('active', method === 'pix');
+      document.getElementById('tabContentCartao').classList.toggle('active', method === 'cartao');
+      document.getElementById('tabContentPix').classList.toggle('active', method === 'pix');
+    }
+
+    // Update Summary
+    function updateSummary() {
+      document.getElementById('sumPlanName').textContent = currentPlan.name;
+      document.getElementById('sumPlanPrice').textContent = fmt(currentPlan.price);
+
+      const bumpsContainer = document.getElementById('sumBumpsContainer');
+      bumpsContainer.innerHTML = '';
+
+      let total = currentPlan.price;
+      for (const [k, b] of Object.entries(activeBumps)) {
+        total += b.price;
+        const line = document.createElement('div');
+        line.className = 'summary-line';
+        line.innerHTML = `<span>+ ${b.name}</span><span>${fmt(b.price)}</span>`;
+        bumpsContainer.appendChild(line);
+      }
+
+      document.getElementById('sumTotalPrice').textContent = fmt(total);
+
+      // 12x calculation (estimated)
+      const parcela = (total / 12).toFixed(2);
+      document.getElementById('sumInstallments').textContent = `ou até 12x de ${fmt(Number(parcela))}`;
+    }
+
+    // Handle checkout execution
+    function executeCheckout() {
+      const name = document.getElementById('custName').value.trim();
+      const phone = document.getElementById('custPhone').value.trim();
+      const email = document.getElementById('custEmail').value.trim();
+      const pos = document.getElementById('custPosition').value;
+      const city = document.getElementById('custCity').value.trim();
+
+      if (!name || !phone) {
+        alert('Por favor, preencha pelo menos seu Nome e WhatsApp para continuarmos!');
+        document.getElementById('custName').focus();
+        return;
+      }
+
+      let total = currentPlan.price;
+      const bumpsList = [];
+      for (const [k, b] of Object.entries(activeBumps)) {
+        total += b.price;
+        bumpsList.push(b.name);
+      }
+
+      // 1. Se houver link direto cadastrado para o plano e sem bumps, abre o gateway
+      const directLink = PAYMENT_LINKS[currentPlan.key];
+      if (directLink && bumpsList.length === 0) {
+        window.open(directLink, '_blank');
+        return;
+      }
+
+      // 2. Caso contrário (múltiplos itens ou ainda sem link colado), fecha com payload pronto no WhatsApp oficial
+      let msg = `*NOVO PEDIDO NO CHECKOUT - CANDIDATO PRO*\n\n` +
+                `*Candidato:* ${name}\n` +
+                `*WhatsApp:* ${phone}\n` +
+                `*E-mail:* ${email || 'Não informado'}\n` +
+                `*Cargo:* ${pos}\n` +
+                `*Cidade/UF:* ${city || 'Não informado'}\n\n` +
+                `*Pacote Escolhido:* ${currentPlan.name} (${fmt(currentPlan.price)})\n`;
+
+      if (bumpsList.length > 0) {
+        msg += `*Adicionais Selecionados:*\n• ` + bumpsList.join('\n• ') + `\n`;
+      }
+
+      msg += `\n*TOTAL DO PEDIDO:* ${fmt(total)}\n` +
+             `*Forma de Pagamento Preferida:* ${activePaymentMethod === 'pix' ? '⚡ PIX Instantâneo' : '💳 Cartão de Crédito (até 12x)'}\n\n` +
+             `Gostaria de receber o link de pagamento / chave PIX para confirmar agora.`;
+
+      const waUrl = `https://api.whatsapp.com/send?phone=5562996046458&text=${encodeURIComponent(msg)}`;
+      window.open(waUrl, '_blank');
+    }
+
+    // Parse URL params (ex: checkout.html?plano=basico)
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const planParam = (params.get('plano') || '').toLowerCase();
+      if (planParam === 'basico') selectPlan('basico', 199.90, 'Kit Básico de Artes');
+      else if (planParam === 'avancado') selectPlan('avancado', 499.90, 'Kit Avançado de Campanha');
+      else if (planParam === 'completo') selectPlan('completo', 999.90, 'Kit Completo Eleições 2026');
+      else if (planParam === 'entrada') selectPlan('entrada', 10000.00, 'Entrada Digital (Landing Page + Tráfego)');
+      else if (planParam === 'ecossistema') selectPlan('ecossistema', 14000.00, 'Ecossistema Máster de Campanha');
+      else selectPlan('intermediario', 299.90, 'Kit Intermediário de Artes');
+    });
+  </script>
+</body>
+</html>
