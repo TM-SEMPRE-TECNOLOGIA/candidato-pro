@@ -19,14 +19,14 @@
     <meta name="Language" content="Português" />
     <meta name="Copyright" content="Candidato PRO • TM Sempre Tecnologia" />
     <meta name="distribution" content="Global" />
-    <meta name="city" content="Salvador" />
+    <meta name="city" content="Goiânia" />
     <meta name="country" content="Brasil" />
-    <meta content="ULOGO" property="og:title" />
+    <meta content="Candidato PRO | Campanha Eleitoral 2026" property="og:title" />
     <meta
       property="og:image"
       content="imagens/hero-war-room.jpg"
     />
-    <meta property="fb:app_id" content="966242223397117" />
+    
     <meta
       property="og:title"
       content="Fale conosco ou tire suas dúvidas de como podemos criar sua campana eleitoral."
@@ -206,7 +206,7 @@
         </div>
         <div class="submit-project-wrapper">
           <div class="w-form">
-            <form action="enviacontato.php" method="post">
+            <form id="formContato" onsubmit="enviarContatoWhatsApp(event)">
               <div class="w-row">
                 <div class="w-col w-col-6">
                   <div>
@@ -246,11 +246,12 @@
                       <label for="Timeline" class="field-label">Telefone</label>
                       <input
                         name="telefone"
-                        type="number"
+                        type="text"
                         class="text-field w-input"
                         maxlength="256"
                         placeholder="Informe seu telefone"
                         id="Timeline"
+                        required=""
                       />
                     </div>
                   </div>
@@ -261,7 +262,7 @@
                         class="text-field w-input"
                         id="estado"
                         name="estado"
-                        require
+                        required=""
                       >
                         <option value="">Selecione um estado</option>
                         <option value="AC">Acre</option>
@@ -317,22 +318,40 @@
                 <div>
                   <textarea
                     name="informacao"
-                    placeholder=""
+                    placeholder="Conte-nos sobre sua campanha, cargo pretendido ou necessidades..."
                     maxlength="5000"
                     class="text-field area w-input"
                   ></textarea>
                 </div>
               </div>
               <div class="top-margin small">
-                <div
-                  class="g-recaptcha"
-                  data-sitekey="6LchMTIhAAAAAGWq3kVPjCxfrpKN6I3gM_mOy1r0"
-                ></div>
                 <div class="algin-center">
-                  <input type="submit" value="Enviar" class="button w-button" />
+                  <input type="submit" value="Enviar via WhatsApp" class="button w-button" style="background:#003d96; font-weight:700; font-size:16px; padding:12px 36px;" />
                 </div>
               </div>
             </form>
+            <script>
+              function enviarContatoWhatsApp(e) {
+                e.preventDefault();
+                var form = document.getElementById('formContato');
+                var nome = form.querySelector('[name="nome"]').value.trim();
+                var email = form.querySelector('[name="email"]').value.trim();
+                var tel = form.querySelector('[name="telefone"]').value.trim();
+                var uf = form.querySelector('[name="estado"]').value;
+                var cidade = form.querySelector('[name="cidade"]').value.trim();
+                var msg = form.querySelector('[name="informacao"]').value.trim();
+
+                var text = "*Novo Contato - Candidato PRO 2026*\n\n" +
+                           "*Nome:* " + nome + "\n" +
+                           "*E-mail:* " + email + "\n" +
+                           "*Telefone:* " + tel + "\n" +
+                           "*Localização:* " + cidade + " / " + uf + "\n" +
+                           (msg ? "*Mensagem:* " + msg : "");
+
+                var url = "https://api.whatsapp.com/send?phone=5562996046458&text=" + encodeURIComponent(text);
+                window.open(url, "_blank");
+              }
+            </script>
           </div>
         </div>
       </div>

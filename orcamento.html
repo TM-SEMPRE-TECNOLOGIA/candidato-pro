@@ -14,9 +14,9 @@
 <meta name="distribution" content="Global">
 <meta name="city" content="Goiânia">
 <meta name="country" content="Brasil">
-<meta content="ULOGO" property="og:title">
+<meta content="Candidato PRO | Campanha Eleitoral 2026" property="og:title" />
 <meta property="og:image" content="imagens/hero-war-room.jpg" />
-<meta property="fb:app_id" content="966242223397117" />
+
 <meta property="og:title" content="Orçamento para campanha política. Serviço Gráficos" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="index.html" />
@@ -104,7 +104,7 @@ $(document).ready(function() {
         </div>
       </div>
       <div>
-        <form action="enviaorcamento.php" method="POST">
+        <form id="formOrcamento" onsubmit="enviarOrcamentoWhatsApp(event)">
           <div class="w-row">
             <div class="modal fade">
               <div class="modal-dialog" role="document">
@@ -319,24 +319,15 @@ $(document).ready(function() {
                           
                           
                           <code>Após o envio de seu orçamento a nossa equipe responsável entrará em contato para obter mais detalhes e informações complementares sobre seu projeto. </code>
-                          
-                          <div class="top-margin small">
-          <div class="g-recaptcha" data-sitekey="6LchMTIhAAAAAGWq3kVPjCxfrpKN6I3gM_mOy1r0"></div>
-            
-          </div>
-          
-          </div>
-           <div class="w-col w-col-12">
-                          
-                          
-                          <div class="top-margin small">
-            <div class="algin-center">
-              <input type="submit" value="Enviar Orçamento" class="button w-button">
-            </div>
-          </div>
-          </div>
-                          
-                           </div>
+                          </div>
+                           <div class="w-col w-col-12">
+                            <div class="top-margin small">
+                              <div class="algin-center">
+                                <input type="submit" value="Enviar Orçamento via WhatsApp" class="button w-button" style="background:#003d96; font-weight:700; font-size:16px; padding:12px 36px;">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -345,6 +336,37 @@ $(document).ready(function() {
             </div>
           </div>
         </form>
+        <script>
+          function enviarOrcamentoWhatsApp(e) {
+            e.preventDefault();
+            var form = document.getElementById('formOrcamento');
+            var nome = form.querySelector('[name="nome"]').value.trim();
+            var email = form.querySelector('[name="email"]').value.trim();
+            var tel = form.querySelector('[name="telefone"]').value.trim();
+            var uf = form.querySelector('[name="estado"]').value;
+            var cidade = form.querySelector('[name="cidade"]').value.trim();
+            var cargo = (form.querySelector('[name="cargo"]') || {}).value || '';
+
+            var itens = [];
+            var checks = form.querySelectorAll('input[type="checkbox"]:checked');
+            checks.forEach(function(c) {
+              var parent = c.parentElement;
+              var labelText = parent ? parent.textContent.trim() : c.name;
+              itens.push(labelText || c.name);
+            });
+
+            var text = "*Solicitação de Orçamento - Candidato PRO 2026*\n\n" +
+                       "*Nome:* " + nome + "\n" +
+                       "*E-mail:* " + email + "\n" +
+                       "*Telefone:* " + tel + "\n" +
+                       "*Localização:* " + cidade + " / " + uf + "\n" +
+                       (cargo ? "*Cargo:* " + cargo + "\n" : "") +
+                       (itens.length > 0 ? "\n*Itens Selecionados:*\n• " + itens.join("\n• ") : "\n*Itens:* Kit personalizado geral");
+
+            var url = "https://api.whatsapp.com/send?phone=5562996046458&text=" + encodeURIComponent(text);
+            window.open(url, "_blank");
+          }
+        </script>
       </div>
     </div>
   </div>
