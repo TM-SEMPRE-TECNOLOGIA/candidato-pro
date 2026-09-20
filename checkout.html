@@ -20,9 +20,9 @@
       --green: #10b981;
       --green-dark: #059669;
       --red: #ef4444;
-      --bg: #0b1320;
-      --card-bg: #111c2e;
-      --card-border: #1e2e47;
+      --bg: #000000;
+      --card-bg: #0c0c0f;
+      --card-border: rgba(255, 255, 255, 0.09);
       --text: #ffffff;
       --text-muted: #94a3b8;
       --font-body: 'Plus Jakarta Sans', sans-serif;
@@ -178,8 +178,8 @@
       letter-spacing: 0.5px;
     }
     .form-input {
-      background: #09101d;
-      border: 1px solid #233550;
+      background: #141419;
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 8px;
       padding: 12px 14px;
       color: #fff;
@@ -190,6 +190,7 @@
     }
     .form-input:focus {
       border-color: var(--accent);
+      box-shadow: 0 0 10px rgba(255, 190, 0, 0.2);
     }
 
     /* PLAN SELECTION CARDS */
@@ -199,8 +200,8 @@
       gap: 10px;
     }
     .plan-card {
-      border: 2px solid #1e2e47;
-      background: #09101d;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: #131318;
       border-radius: 10px;
       padding: 14px 16px;
       display: flex;
@@ -211,12 +212,12 @@
       position: relative;
     }
     .plan-card:hover {
-      border-color: #334d75;
-      background: #0d1728;
+      border-color: rgba(255, 190, 0, 0.4);
+      background: #181820;
     }
     .plan-card.active {
-      border-color: var(--accent);
-      background: rgba(255, 190, 0, 0.05);
+      border: 2px solid var(--accent);
+      background: rgba(255, 190, 0, 0.08);
     }
     .plan-card-left {
       display: flex;
@@ -227,7 +228,7 @@
       appearance: none;
       width: 20px;
       height: 20px;
-      border: 2px solid #475569;
+      border: 2px solid #52525b;
       border-radius: 50%;
       outline: none;
       display: flex;
@@ -238,7 +239,7 @@
     .plan-card.active .plan-radio {
       border-color: var(--accent);
       background: var(--accent);
-      box-shadow: inset 0 0 0 3px #09101d;
+      box-shadow: inset 0 0 0 3px #131318;
     }
     .plan-info-title {
       font-weight: 800;
@@ -335,8 +336,8 @@
       margin-bottom: 18px;
     }
     .pay-tab-btn {
-      background: #09101d;
-      border: 2px solid #233550;
+      background: #131318;
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 8px;
       padding: 12px;
       color: #cbd5e1;
@@ -352,14 +353,14 @@
     .pay-tab-btn.active {
       border-color: var(--accent);
       color: #fff;
-      background: rgba(255, 190, 0, 0.08);
+      background: rgba(255, 190, 0, 0.1);
     }
     .pay-tab-content {
       display: none;
-      background: #09101d;
+      background: #111116;
       border-radius: 8px;
       padding: 16px;
-      border: 1px solid #1e2e47;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
     .pay-tab-content.active {
       display: block;
@@ -367,11 +368,11 @@
 
     /* ORDER SUMMARY & CTA */
     .summary-box {
-      background: #09101d;
+      background: #111116;
       border-radius: 10px;
       padding: 18px;
       margin-top: 18px;
-      border: 1px solid #1e2e47;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
     .summary-line {
       display: flex;
@@ -439,8 +440,8 @@
     /* HIGH TICKET CALL BOX */
     .call-consult-box {
       margin-top: 16px;
-      background: #0d1728;
-      border: 1px solid #1e3a66;
+      background: #111116;
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 10px;
       padding: 14px 16px;
       display: flex;
@@ -624,7 +625,7 @@
   <!-- 2. HEADER -->
   <header class="checkout-header">
     <a href="index.html">
-      <img src="imagens/candidato-pro-logo.png" alt="Candidato PRO" class="brand-logo" />
+      <img src="imagens/candidato-pro-logo-negativa.png" alt="Candidato PRO" class="brand-logo" />
     </a>
     <h1 class="checkout-title">SIM! Quero uma <span>Campanha Eleitoral Vencedora</span> em 2026!</h1>
     <p class="checkout-subtitle">Preencha seus dados abaixo e escolha seu pacote para iniciar a criação imediatamente com nossa equipe de especialistas.</p>
