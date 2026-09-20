@@ -42,6 +42,94 @@
       line-height: 1.5;
       overflow-x: hidden;
       padding-bottom: 60px;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* PATRIOTIC BRAZILIAN BACKGROUND & LIGHTING EFFECTS */
+    .checkout-bg-effects {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 850px;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .bg-brasil-flag {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('imagens/checkout-brasil-bg.jpg');
+      background-size: cover;
+      background-position: center top;
+      opacity: 0.35;
+      mix-blend-mode: screen;
+      filter: contrast(1.2) brightness(0.95) saturate(1.1);
+    }
+
+    /* Ambient Green & Yellow Lights */
+    .bg-glow-gold {
+      position: absolute;
+      top: -80px;
+      left: -80px;
+      width: 750px;
+      height: 750px;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 190, 0, 0.30) 0%, rgba(217, 163, 13, 0.12) 45%, transparent 70%);
+      filter: blur(60px);
+    }
+
+    .bg-glow-green {
+      position: absolute;
+      top: -60px;
+      right: -80px;
+      width: 850px;
+      height: 850px;
+      background: radial-gradient(circle at 60% 30%, rgba(0, 168, 89, 0.32) 0%, rgba(0, 100, 50, 0.12) 50%, transparent 70%);
+      filter: blur(70px);
+    }
+
+    /* Stars / Constellation Pattern on the left (Cruzeiro do Sul / Electoral Stars) */
+    .bg-stars-pattern {
+      position: absolute;
+      top: 80px;
+      left: 30px;
+      width: 320px;
+      height: 420px;
+      background-image: 
+        radial-gradient(2px 2px at 50px 70px, #FFBE00, rgba(0,0,0,0)),
+        radial-gradient(3px 3px at 130px 45px, #FFFFFF, rgba(0,0,0,0)),
+        radial-gradient(3.5px 3.5px at 90px 150px, #FFBE00, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 170px 115px, #FFBE00, rgba(0,0,0,0)),
+        radial-gradient(4px 4px at 55px 230px, #FFFFFF, rgba(0,0,0,0)),
+        radial-gradient(2.5px 2.5px at 140px 270px, #FFBE00, rgba(0,0,0,0)),
+        radial-gradient(3.5px 3.5px at 230px 190px, #FFFFFF, rgba(0,0,0,0)),
+        radial-gradient(2.5px 2.5px at 270px 95px, #FFBE00, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 200px 300px, #FFFFFF, rgba(0,0,0,0)),
+        radial-gradient(3.5px 3.5px at 290px 250px, #FFBE00, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 80px 340px, #FFFFFF, rgba(0,0,0,0)),
+        radial-gradient(3px 3px at 180px 370px, #FFBE00, rgba(0,0,0,0));
+      opacity: 0.85;
+      filter: drop-shadow(0 0 8px rgba(255, 190, 0, 0.7));
+    }
+
+    /* Smooth Gradient Fade down to Solid Black */
+    .bg-bottom-fade {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 420px;
+      background: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(0, 0, 0, 0.6) 35%, 
+        rgba(0, 0, 0, 0.92) 75%, 
+        #000000 100%
+      );
     }
 
     /* TOP URGENCY STRIP */
@@ -77,6 +165,8 @@
       text-align: center;
       max-width: 900px;
       margin: 0 auto;
+      position: relative;
+      z-index: 2;
     }
     .brand-logo {
       max-width: 180px;
@@ -108,6 +198,8 @@
       grid-template-columns: 1.15fr 0.85fr;
       gap: 28px;
       align-items: start;
+      position: relative;
+      z-index: 2;
     }
     @media (max-width: 900px) {
       .checkout-container {
@@ -615,9 +707,18 @@
 </head>
 <body>
 
+  <!-- PATRIOTIC BRAZILIAN BACKGROUND & LIGHTING EFFECTS -->
+  <div class="checkout-bg-effects" aria-hidden="true">
+    <div class="bg-brasil-flag"></div>
+    <div class="bg-stars-pattern"></div>
+    <div class="bg-glow-gold"></div>
+    <div class="bg-glow-green"></div>
+    <div class="bg-bottom-fade"></div>
+  </div>
+
   <!-- 1. TOP URGENCY COUNTDOWN -->
   <div class="top-strip">
-    <span>⚡ CONDIÇÃO OFICIAL ELEIÇÕES 2026 LIBERADA:</span>
+    <span style="color:#ffd700; font-weight:800;">★ CONDIÇÃO OFICIAL ELEIÇÕES 2026 LIBERADA:</span>
     <div class="timer-badge" id="countdownTimer">14:59</div>
     <span class="w-hidden-small">Vagas limitadas por circunscrição eleitoral</span>
   </div>
