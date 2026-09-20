@@ -703,6 +703,118 @@
     .floating-wa:hover {
       transform: scale(1.05);
     }
+
+    /* BOTTOM HORIZONTAL SECURITY & TRUST SECTION */
+    .checkout-bottom-security {
+      max-width: 1100px;
+      margin: 40px auto 20px auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
+    }
+    .security-banner-card {
+      background: #0b0f17;
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 61, 150, 0.1);
+      text-align: center;
+    }
+    .security-banner-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffd700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+    .security-banner-subtitle {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      max-width: 760px;
+      margin: 0 auto 20px auto;
+      line-height: 1.5;
+    }
+    .security-img-container {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 0 auto 24px auto;
+      max-width: 800px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .security-img-container img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    .security-badges-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .security-badges-grid img {
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+      transition: transform 0.2s;
+    }
+    .security-badges-grid img:hover {
+      transform: translateY(-2px);
+    }
+    .security-features-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+      border-top: 1px solid #1e293b;
+      padding-top: 20px;
+      text-align: left;
+    }
+    .security-feature-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .security-feature-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: rgba(0, 61, 150, 0.2);
+      border: 1px solid rgba(0, 61, 150, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #60a5fa;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .security-feature-text h5 {
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: #f1f5f9;
+      margin-bottom: 3px;
+    }
+    .security-feature-text p {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      line-height: 1.4;
+      margin: 0;
+    }
+    .checkout-footer-copyright {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-top: 24px;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -971,6 +1083,11 @@
           </button>
         </div>
 
+        <!-- SELOS COMPRA SEGURA SOB O BOTAO -->
+        <div style="margin-top: 14px; text-align: center;">
+          <img src="imagens/selos-compra-segura.png" alt="Selos Compra Segura e Garantia" style="max-width: 320px; width: 100%; height: auto; opacity: 0.9;" />
+        </div>
+
         <!-- SE FOR PACOTE GRANDE: OPCIONAL CALL CONSULTIVA -->
         <div class="call-consult-box">
           <div>
@@ -1037,6 +1154,72 @@
     </div>
 
   </main>
+
+  <!-- 4. BOTTOM HORIZONTAL SECURITY & PAYMENT BANNER -->
+  <section class="checkout-bottom-security">
+    <div class="security-banner-card">
+      <div class="security-banner-title">
+        <i class="fa-solid fa-shield-halved"></i> AMBIENTE DE PAGAMENTO 100% BLINDADO & SEGURO
+      </div>
+      <p class="security-banner-subtitle">
+        Transações criptografadas com certificado SSL de 256 bits de padrão bancário. Seus dados cadastrais e de pagamento estão protegidos sob sigilo absoluto garantido pela LGPD (Lei Federal 13.709/2018).
+      </p>
+
+      <!-- BANNER HORIZONTAL CLÁSSICO DE COMPRA SEGURA & BANDEIRAS -->
+      <div class="security-img-container">
+        <img src="imagens/banner-mercadopago-12x.png" alt="Compra Segura - Mercado Pago, Parcelamento em até 12x, Cartões Visa Mastercard Elo e Selos de Garantia" />
+      </div>
+
+      <!-- SELOS OFICIAIS DE CERTIFICAÇÃO E AUDITORIA -->
+      <div class="security-badges-grid">
+        <img src="imagens/selo-site-blindado.svg" alt="Selo Site Blindado" style="height: 38px; width: auto;" />
+        <img src="imagens/selo-ssl-256.svg" alt="Selo SSL 256 Bits" style="height: 38px; width: auto;" />
+        <img src="imagens/selo-google-safe.svg" alt="Google Safe Browsing" style="height: 38px; width: auto;" />
+        <img src="imagens/selo-reclame-aqui.svg" alt="Reclame Aqui 100%" style="height: 38px; width: auto;" />
+      </div>
+
+      <!-- 4 PILARES DE CONFIANÇA & GARANTIA -->
+      <div class="security-features-strip">
+        <div class="security-feature-box">
+          <div class="security-feature-icon"><i class="fa-solid fa-lock"></i></div>
+          <div class="security-feature-text">
+            <h5>Criptografia Militar</h5>
+            <p>Seus dados financeiros não são armazenados em nossos servidores.</p>
+          </div>
+        </div>
+
+        <div class="security-feature-box">
+          <div class="security-feature-icon"><i class="fa-solid fa-award"></i></div>
+          <div class="security-feature-text">
+            <h5>Satisfação Garantida</h5>
+            <p>Garantia incondicional de 7 dias com suporte direto aos ajustes.</p>
+          </div>
+        </div>
+
+        <div class="security-feature-box">
+          <div class="security-feature-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+          <div class="security-feature-text">
+            <h5>NFS-e Oficial TSE</h5>
+            <p>Nota fiscal emitida para prestação de contas da campanha eleitoral.</p>
+          </div>
+        </div>
+
+        <div class="security-feature-box">
+          <div class="security-feature-icon"><i class="fa-solid fa-headset"></i></div>
+          <div class="security-feature-text">
+            <h5>Suporte Exclusivo WhatsApp</h5>
+            <p>Atendimento humanizado em tempo real para candidatos e assessores.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RODAPÉ INSTITUCIONAL DISCRETO -->
+      <div class="checkout-footer-copyright">
+        © 2026 Candidato PRO • Sempre Tecnologia. Todos os direitos reservados.<br/>
+        CNPJ: 50.812.288/0001-08 • Desenvolvido para Eleições Municipais e Gerais de Alto Nível.
+      </div>
+    </div>
+  </section>
 
   <!-- FLOATING WHATSAPP BUTTON -->
   <a href="https://api.whatsapp.com/send?phone=5562996046458&text=Ol%C3%A1!%20Estou%20na%20p%C3%A1gina%20de%20checkout%20do%20Candidato%20PRO%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" class="floating-wa">
