@@ -985,6 +985,21 @@
               <div class="plan-price-sub">ou 12x de R$ 1.398,00</div>
             </div>
           </div>
+
+          <!-- PRODUTO: AUDITOR MATINAL DO DIÁRIO OFICIAL -->
+          <div class="plan-card" onclick="selectPlan('auditor', 2500.00, 'Auditor Matinal do Diário Oficial (Setup + R$ 400/mês)')" style="border-color: rgba(255, 190, 0, 0.4);">
+            <div class="plan-card-left">
+              <input type="radio" name="plan" class="plan-radio" id="plan_auditor" />
+              <div>
+                <div class="plan-info-title" style="color: #ffd700;">★ Auditor Matinal do Diário Oficial</div>
+                <div class="plan-info-desc">Robô entra todo dia às 06:00 nos portais das prefeituras, busca pautas de interesse e envia o resumo no WhatsApp do assessor antes da sessão da Câmara.</div>
+              </div>
+            </div>
+            <div class="plan-card-right">
+              <div class="plan-price-main">R$ 2.500,00</div>
+              <div class="plan-price-sub">Setup + R$ 400/mês</div>
+            </div>
+          </div>
         </div>
 
         <!-- ORDER BUMPS (COMPRE JUNTO) -->
@@ -1026,6 +1041,18 @@
                 <span>Pack 10 Figurinhas / Stickers de WhatsApp (+ R$ 197,00)</span>
               </div>
               <p class="order-bump-text">10 stickers recortados com borda branca, slogan e reações do candidato para viralizar nos grupos.</p>
+            </div>
+          </label>
+
+          <!-- BUMP 4: AUDITOR MATINAL DO DIÁRIO OFICIAL -->
+          <label class="order-bump-box" style="border-color: rgba(255, 190, 0, 0.35); background: rgba(255, 190, 0, 0.03);">
+            <input type="checkbox" class="order-bump-checkbox" id="bump_auditor" onchange="toggleBump('auditor', 2500.00, 'Auditor Matinal do Diário Oficial (Setup + R$ 400/mês)')" />
+            <div class="order-bump-content">
+              <div class="order-bump-headline">
+                <span class="order-bump-badge" style="background:#b45309; color:#fef3c7;">★ INTELIGÊNCIA PARLAMENTAR</span>
+                <span>Auditor Matinal do Diário Oficial (+ R$ 2.500,00 setup)</span>
+              </div>
+              <p class="order-bump-text">Robô entra todo dia às 06:00 nos portais das prefeituras, busca pautas de interesse e envia o resumo no WhatsApp do assessor antes da sessão da Câmara (+ R$ 400/mês).</p>
             </div>
           </label>
         </div>
@@ -1235,7 +1262,8 @@
       avancado: '',      // Ex: 'https://mpago.la/xxxx'
       completo: '',      // Ex: 'https://mpago.la/xxxx'
       entrada: '',       // Ex: 'https://mpago.la/xxxx'
-      ecossistema: ''    // Ex: 'https://mpago.la/xxxx'
+      ecossistema: '',   // Ex: 'https://mpago.la/xxxx'
+      auditor: ''        // Ex: 'https://mpago.la/xxxx'
     };
 
     // Current State
@@ -1274,6 +1302,34 @@
         targetRadio.checked = true;
         targetRadio.closest('.plan-card').classList.add('active');
       }
+
+      // Update right column deliverables preview
+      const previewTitle = document.getElementById('previewTitle');
+      const previewList = document.getElementById('previewList');
+      if (key === 'auditor') {
+        if (previewTitle) previewTitle.textContent = 'Auditor Matinal do Diário Oficial — IA & Inteligência Parlamentar';
+        if (previewList) {
+          previewList.innerHTML = `
+            <li><i class="fa-solid fa-circle-check"></i> <span><strong>Varredura Diária às 06:00</strong> nos portais e diários municipais</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span><strong>Filtro de Palavras-Chave</strong> (licitações, decretos, vetos e nomeações)</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span><strong>Resumo Executivo no WhatsApp</strong> pronto antes da sessão da Câmara</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span><strong>Vantagem Tática e Política</strong> antes da oposição e da imprensa</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span><strong>Setup Personalizado</strong> para os portais da sua circunscrição (+ R$ 400/mês)</span></li>
+          `;
+        }
+      } else {
+        if (previewTitle) previewTitle.textContent = 'Candidato PRO — Kit Completo de Identidade & Campanha';
+        if (previewList) {
+          previewList.innerHTML = `
+            <li><i class="fa-solid fa-circle-check"></i> <span><strong>Identidade Visual Completa</strong> com as cores oficiais do partido</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span><strong>Tratamento de Foto de Estúdio</strong> (recorte de alta precisão)</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span><strong>Santinho Digital & Impresso</strong> nos formatos para gráfica</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span><strong>Artes para Redes Sociais</strong> (Feed, Stories e Capas)</span></li>
+            <li><i class="fa-solid fa-circle-check"></i> <span><strong>Entrega Rápida</strong> para você não perder tempo de campanha</span></li>
+          `;
+        }
+      }
+
       updateSummary();
     }
 
@@ -1379,6 +1435,7 @@
       else if (planParam === 'completo') selectPlan('completo', 999.90, 'Kit Completo Eleições 2026');
       else if (planParam === 'entrada') selectPlan('entrada', 10000.00, 'Entrada Digital (Landing Page + Tráfego)');
       else if (planParam === 'ecossistema') selectPlan('ecossistema', 14000.00, 'Ecossistema Máster de Campanha');
+      else if (planParam === 'auditor') selectPlan('auditor', 2500.00, 'Auditor Matinal do Diário Oficial (Setup + R$ 400/mês)');
       else selectPlan('intermediario', 299.90, 'Kit Intermediário de Artes');
     });
   </script>
